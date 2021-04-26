@@ -1,0 +1,42 @@
+:root{
+  --white: #fff;
+  --gray1: rgb(248, 248, 248);
+  --gray2: #333;
+  --black1: #111;
+  --black2: #222;
+  --primary: #6308ff;
+  --primary2: #7635e6;
+  --secondary: #ffb108;
+  --secondary2: #e6ae35;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Lato;
+}
+
+li{
+  list-style: none;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
