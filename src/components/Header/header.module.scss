@@ -29,9 +29,91 @@
         color: var(--white);
     }
 
+    .cartContainerShow{
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: flex-start;
+        background-color: var(--gray1);
+        color: var(--gray2);
+        overflow-y: auto;
+        transition: all .3s ease;
+        
+        
+        &:hover{
+            height: auto;  
+            span{
+                color: var(--gray2);
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .cartContainerHide{
+        display: none;
+    }
+
+
+
+    .cartScrollContainer{
+        display: flex;
+        padding: 4px;
+        border-bottom: 1px dashed #888;
+        overflow-y: hidden;
+
+        p{
+            font-size: .8rem;
+            margin-left: 12px;
+        }
+
+        img:hover{
+            cursor: pointer;
+        }
+    }
+
+    .rigthContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        color: var(--white);
+        width: 320px;
+        position: absolute;
+        right: 20px;
+        
+        button{
+            display: flex;
+            position: absolute;
+            right: 18px;
+            top: 24px;
+            color:var(--white);
+            background: var(--secondary);
+            padding: 2px;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+        .btnCart{
+            border: none;
+            background: var(--primary2);
+            display: flex;
+            position: absolute;
+            right: 18px;
+            top: 60px;
+            padding: 2px;
+        }
+    }
+
+    
+
+    strong{
+        color: var(--white);
+    }
+
 }
 
 .headerHide{
     height: 4px;
     position: fixed;
 }
+
