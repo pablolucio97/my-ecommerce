@@ -54,7 +54,7 @@ export default function Home() {
                 </button>
               ))}
             </ul>
-          </div>
+           </div>
           <div className={styles.productsContainer}>
             {
               products.map((product, index) => (

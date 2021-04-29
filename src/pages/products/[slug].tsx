@@ -1,12 +1,10 @@
 import React from 'react'
 import { ProductsContext } from '../../contexts/ProductsContext'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import { useContext, useEffect } from 'react'
 import api from '../../services/api'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import styles from './productDetails.module.scss'
-import {MdArrowBack} from 'react-icons/md'
 
 type ProductProps = {
     id: number;
@@ -33,9 +31,6 @@ export default function Product({singleProduct} : Products ) {
 
     return (
         <div className={styles.mainContainer}>
-            <Link href='/'>
-                <a><MdArrowBack size={24}/></a>
-            </Link>
             <div className={styles.productDetails}>
                 <h3>{singleProduct.title}</h3>
                 <img src={singleProduct.image} alt={singleProduct.title}/>

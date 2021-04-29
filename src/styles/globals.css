@@ -27,7 +27,7 @@ a {
   font-family: Lato;
 }
 
-li{
+li, ul{
   list-style: none;
 }
 

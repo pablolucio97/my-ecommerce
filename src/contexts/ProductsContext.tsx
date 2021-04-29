@@ -1,5 +1,6 @@
 
-import {createContext, useState} from 'react'
+import React from 'react'
+import {ChangeEvent, createContext, useState} from 'react'
 import api from '../services/api'
 
 
@@ -22,10 +23,16 @@ type ProductsContextData = {
     renderProductDetails: (product: ProductProps) => void;
     toggleCartVisible: () => void;
     sentToCard?: () => void;
+    calcTotalOnCard: () => void;
+    changeQuotas: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     productsOnCart: ProductProps[]
     cartVisible: boolean;
-
+    availableQuotas: number[];
+    total: number;
+    quota: number;
+    quotaVal: number;
 }
+
 export const ProductsContext = createContext({} as ProductsContextData)
 
 export default function ProductsStateProvider({children} : PlayerProviderProps){
@@ -34,7 +41,23 @@ export default function ProductsStateProvider({children} : PlayerProviderProps){
   const [productsOnCart, setProductsOnCard] = useState<ProductProps[]>([])
   const [cartVisible, setCartVisible] = useState(false)
   const [singleProduct, setSingleProduct] = useState<ProductProps>({} as ProductProps)
+  const [total, setTotal] = useState(0)
+  const [quota, setQuota] = useState(1)
+  const [quotaVal, setQuotaVal] = useState(0)
+  
+  const availableQuotas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  
+  function calcTotalOnCard() {
+      const total = productsOnCart.reduce((acc, el) => acc + el.price, 0)
+      const quotaVal = Number(total / quota)
+      setTotal(total)
+      setQuotaVal(quotaVal)
+  }
 
+  function changeQuotas(e: ChangeEvent<HTMLSelectElement>) {
+      const val = e.target.value
+      setQuota(Number(val))
+  }
 
   async function getProducstsByCategory(term?: string) {
     const { data } = term ?
@@ -60,6 +83,7 @@ function renderProductDetails(product: ProductProps){
     setProductsOnCard([...productsOnCart, addProduct])
   }
 
+
     return(
         <ProductsContext.Provider value={{
             products,
@@ -69,6 +93,12 @@ function renderProductDetails(product: ProductProps){
             productsOnCart,
             renderProductDetails,
             singleProduct,
+            calcTotalOnCard,
+            changeQuotas,
+            quota,
+            quotaVal,
+            availableQuotas,
+            total,
             getProducstsByCategory,}}>
             {children}
         </ProductsContext.Provider>

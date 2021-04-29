@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    
+          button {
+            display: flex;
+            color: var(--black2);
+            background: var(--secondary);
+            padding: 2px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            width: 240px;
+            height: 32px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        
+            &:hover {
+              transform: scale(0.98);
+            }
+          }
+  }
+
+  .detailsContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 320px;
+      background: var(--gray1);
+      border: 1px solid var(--black1);
+      margin: .6rem auto;
+      margin-bottom: 1rem;
+      padding: 1rem;
+
+        .listProductsContainer{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: .2rem;
+            padding: .2rem;
+            border: 1px solid var(--black1);
+            align-self: flex-start;
+
+            img{
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+  }
