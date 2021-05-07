@@ -2,6 +2,7 @@
     display: flex;
     background-color: var(--gray1);
     margin: 0 auto;
+    justify-content: flex-start;
 }
 
 .card{
@@ -61,7 +62,7 @@
 
 .productsContainer{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 75%;
     max-width: 1200px;
     flex-wrap: wrap;
