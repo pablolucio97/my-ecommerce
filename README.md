@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O move.it é um app que une a técnica de Pomodoro com a realização de exercícios físicos para quem precisar passar muito tempo na frente do computador.
+O My ecommerce é um fake e-commerce que simula uma compra virtual.
 
 
 ## 🚀 Como executar
