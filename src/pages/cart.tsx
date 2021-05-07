@@ -75,8 +75,8 @@ export default function Cart() {
                     {payWithCard ?
                         <form>
                             <InputMask mask='9999-9999-9999-9999' type="text" placeholder='Número do cartão' />
-                            <input type='text' placeholder='Nome impresso no cartão' />
-                            <InputMask mask='99/2099' type="text" placeholder='Validade' />
+                            <input type='text' placeholder='Nome impresso no cartão' required />
+                            <InputMask mask='99/2099' type="text" placeholder='Validade' required/>
                             <InputMask mask='999' type="text" placeholder='Código de segurança' />
                             <select name="set-quota" id="set-quota" onChange={changeQuotas}>
                                 {availableQuotas.map((quotaVal, idx) => (
