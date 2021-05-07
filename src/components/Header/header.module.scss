@@ -102,20 +102,17 @@
         align-items: flex-end;
         color: var(--white);
         width: 320px;
-        position: absolute;
         right: 20px;
         margin-bottom: 2rem;
         
         button{
             display: flex;
-            position: absolute;
-            right: 18px;
-            top: 24px;
             color:var(--white);
             background: var(--secondary);
             padding: 2px;
             transition: all .2s ease;
             cursor: pointer;
+            margin-top: 1rem;
         }
         .btnCart{
             border: none;
@@ -173,6 +170,7 @@
             margin-left: 2rem;
             button{
                 margin-top: 3rem;
+                background: cyan;
             }
         }
     }
