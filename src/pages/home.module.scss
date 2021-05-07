@@ -1,11 +1,12 @@
 .mainContainer{
     display: flex;
     background-color: var(--gray1);
+    margin: 0 auto;
 }
 
 .card{
     max-width: 320px;
-    max-height: 340px;
+    height: 340px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -14,7 +15,7 @@
     border-radius: 2px;
     background-color: var(--gray1);
     transition: all .2s ease;
-    margin: 8px 12px;
+    margin: 12px;
     padding: 12px;
 
     &:hover{
@@ -60,9 +61,11 @@
 
 .productsContainer{
     display: flex;
-    width: 100%;
+    justify-content: center;
+    width: 75%;
+    max-width: 1200px;
     flex-wrap: wrap;
-    margin: 2rem 3rem;
+    margin: 2rem auto;
     overflow-y: auto;
 }
 
@@ -123,4 +126,14 @@
     position: fixed;
 
 
+}
+
+
+@media(max-width: 720px){
+    .card{
+        margin: 12px auto;
+    }
+    .menu{
+        display: none;
+    }
 }

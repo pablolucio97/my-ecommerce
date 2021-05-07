@@ -11,7 +11,9 @@ export default function Finish() {
 
     const {productsOnCart, total} = useContext(ProductsContext)
 
+
     const costWithShip = (shipValue + total).toFixed(2)
+
 
     const generateOrderNumber = useMemo(() => {
         const orderNumber = Math.floor(Math.random () *  123154)
@@ -24,6 +26,14 @@ export default function Finish() {
         })
         return deliveryDate
     },[])
+
+     useEffect(() => {
+        if(total < 100){
+            setShipValue(total * .1)
+        }
+    }, [])
+
+
         
 
     return (
@@ -43,12 +53,10 @@ export default function Finish() {
                         </div>
                     ))}
             
-                <span>Valor do frete: R${freeShip? '0,00' : shipValue} </span>
+                <span>Valor do frete: R${freeShip? '0,00' : shipValue.toFixed(2)} </span>
                 <strong>Valor total: R${freeShip? total.toFixed(2) : costWithShip }</strong>
-                <span>Método de pagamento: boleto</span>
                 <p>Chegará até: {generateDeliveryDate}</p>
-            </div>
-            <button>Compartilhar</button>
+            </div>          
         </div>
     )
 }

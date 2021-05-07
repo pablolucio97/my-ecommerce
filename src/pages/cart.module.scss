@@ -6,6 +6,32 @@
   margin: 1rem auto;
 }
 
+.emptyCart{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+  height: 60vh;
+  margin: 1rem auto;
+
+  button{
+    display: flex;
+    color: var(--black2);
+    background: var(--secondary);
+    padding: 2px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    height: 32px;
+    width: 240px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(0.98);
+    }
+  }
+}
+
 .cartContainer {
   display: flex;
   justify-content: flex-start;
@@ -102,4 +128,47 @@
       }
     }
   }
+}
+
+@media(max-width: 720px){
+  .cartContainer {
+    width: 80%;
+    min-width: 320px;
+    padding: 1rem;
+
+    div{
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    span, strong, label{
+      font-size: .85rem;
+      margin: 0 auto;
+    }
+
+    .paymentBolet{
+      width: 70%;
+      padding-left: 1rem;
+    }
+
+    div{
+      padding: .2rem;
+    }
+    
+    h1, h3{
+      font-size: 1.4rem;
+      margin: 1rem auto;
+    }
+
+    input[type = text], select{
+      width: 70%;
+      margin: 1px auto;
+    }
+    .paymentContainer{
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+
 }

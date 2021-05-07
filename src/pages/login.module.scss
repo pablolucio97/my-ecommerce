@@ -42,3 +42,24 @@
       }
 
 }
+
+@media(max-width: 720px){
+    .cotnainer{
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+    
+    .loginContainer{
+        padding: 2rem;
+        margin: 0 auto;
+        input, button{
+            width: 240px;
+        }
+
+        button{
+            margin-right: 2rem;
+        }
+    }
+
+}

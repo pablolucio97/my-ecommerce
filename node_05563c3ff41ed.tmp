@@ -1,0 +1,25 @@
+function Car (maxVelocity = 200, delta = 5){
+    let currentVelocity = 0
+
+    this.acelerate = function (){
+        if(currentVelocity + delta <= maxVelocity ){
+                currentVelocity+= delta
+        }else{
+            currentVelocity = maxVelocity
+        }
+    }
+
+    this.getCurrentVelocity = function (){
+        return currentVelocity
+    }
+}
+
+const celta = new Car
+celta.acelerate()
+console.log(celta.getCurrentVelocity())
+
+const ferrari = new Car(350, 20)
+setInterval(() => {
+    ferrari.acelerate()
+    console.log(ferrari.getCurrentVelocity())
+}, 1000)

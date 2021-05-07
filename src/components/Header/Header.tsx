@@ -2,8 +2,10 @@ import React from 'react'
 import styles from './header.module.scss'
 import { FiShoppingBag, FiShoppingCart } from 'react-icons/fi'
 import { ProductsContext } from '../../contexts/ProductsContext'
+import  {SearchContextProvider}  from '../../contexts/SearchContext'
 import { useContext } from 'react'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function Header() {
 
@@ -12,14 +14,30 @@ export default function Header() {
         cartVisible,
         productsOnCart,
         toggleCartVisible,
+        getProducstsByCategory
     } = useContext(ProductsContext)
 
+    const {possibleSearchs} = useContext(SearchContextProvider)
+
+    useEffect(() => {
+        getProducstsByCategory('')
+      }, [])
+    
 
     return (
         <header className={styles.header}>
             <Link href='/'>
                 <h2><FiShoppingBag size={24} /> My Ecommerce</h2>
             </Link>
+            <div className={styles.menu}>
+            <ul>
+              {possibleSearchs.map(possible => (
+                <button key={possible.title} onClick={() => getProducstsByCategory(`${possible.value}`)}>
+                  {possible.title}
+                </button>
+              ))}
+            </ul>
+           </div>
 
             <div className={styles.rigthContent}>
                 <strong>Frete grátis nas compras acima de R$ 99,90</strong>
