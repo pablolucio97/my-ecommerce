@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O My ecommerce é um fake e-commerce que simula uma compra virtual.
+O My ecommerce é um fake e-commerce responsivo que simula uma compra virtual.
 
 
 ## 🚀 Como executar
