@@ -41,34 +41,17 @@ export default function Header() {
 
             <div className={styles.rigthContent}>
                 <strong>Frete grátis nas compras acima de R$ 99,90</strong>
-                <button onClick={toggleCartVisible}>
+                <span>
                     <FiShoppingCart size={16} style={{ marginRight: 8 }} />
                     {productsOnCart.length > 0 ?
                         `${productsOnCart.length} items`
                         :
                         'Seu carrinho está vazio'}
-                </button>
-                <div className={cartVisible ? styles.cartContainerShow : styles.cartContainerHide}>
+                </span>
                     <Link href='/cart'>
                         <button className={styles.btnCart}>Ir para meu carrinho</button>
                     </Link>
-                    {productsOnCart.map(product => (
-                        <ul>
-                            <li>
-                                <div className={styles.cartScrollContainer}>
-                                    <Link href={`/products/${product.id}`}>
-                                        <img
-                                            src={product.image}
-                                            width={24}
-                                            height={24}
-                                            alt={product.title}/>
-                                    </Link>
-                                    <p>{(product.title).substring(0, 24).concat('...')}</p>
-                                </div>
-                            </li>
-                        </ul>
-                    ))}
-                </div>
+
             </div>
         </header>
     )
